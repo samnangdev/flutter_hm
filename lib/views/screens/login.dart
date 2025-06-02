@@ -12,6 +12,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   bool obsecureText = true;
+  bool _isValidEmail = false;
   Widget build(BuildContext context) {
     return Scaffold(body: _body);
   }
@@ -32,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: 15),
               // Text("Welcome back"),
               SizedBox(height: 20),
-              _username,
+              _email,
               SizedBox(height: 20),
               _password,
               SizedBox(height: 0),
@@ -66,14 +67,25 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget get _username {
+  Widget get _email {
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20),
       child: SizedBox(
         height: 50,
         child: TextField(
+          onChanged: (value) {
+            if (value.contains("@")) {
+              setState(() {
+                _isValidEmail = true;
+              });
+            }
+          },
           decoration: InputDecoration(
-            labelText: "Username",
+            suffix:
+                !_isValidEmail
+                    ? Icon(Icons.check_circle_rounded)
+                    : Icon(Icons.check_circle_rounded, color: Colors.green),
+            labelText: "Email",
             prefix: Icon(Icons.person),
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
           ),

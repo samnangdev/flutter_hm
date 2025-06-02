@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:samnang_hm/views/screens/custom_search_delegate.dart';
 import 'package:samnang_hm/views/screens/search_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,6 +21,13 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
 
         actions: [
+          GestureDetector(
+            onTap: () {
+              showSearch(context: context, delegate: CustomSearchDelegate());
+            },
+            child: Icon(Icons.search),
+          ),
+
           // IconButton(
           //   onPressed: () {
           //     // isDarkModeNotifier.value = !isDarkModeNotifier.value;
@@ -34,20 +42,19 @@ class _HomeScreenState extends State<HomeScreen> {
           //   //   },
           //   // ),
           // ),
-          IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return SearchScreen();
-                  },
-                ),
-              );
-            },
-            icon: Icon(Icons.search),
-          ),
-
+          // IconButton(
+          //   onPressed: () {
+          //     Navigator.push(
+          //       context,
+          //       MaterialPageRoute(
+          //         builder: (context) {
+          //           return SearchScreen();
+          //         },
+          //       ),
+          //     );
+          //   },
+          //   icon: Icon(Icons.search),
+          // ),
           IconButton(
             onPressed: () {
               // Navigator.push(

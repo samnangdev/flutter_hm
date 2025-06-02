@@ -11,6 +11,7 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   @override
+  bool _isValidEmail = false;
   bool obsecureText = true;
   bool obsecureText1 = true;
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               SizedBox(height: 15),
               // Text("Welcome back"),
               SizedBox(height: 20),
-              _username,
+              _email,
               SizedBox(height: 20),
               _password,
               SizedBox(height: 20),
@@ -49,14 +50,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 
-  Widget get _username {
+  Widget get _email {
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20),
       child: SizedBox(
         height: 50,
         child: TextField(
+          onChanged: (value) {
+            if (value.contains("@")) {
+              setState(() {
+                _isValidEmail = true;
+              });
+            }
+          },
           decoration: InputDecoration(
-            labelText: "Username",
+            labelText: "Email",
+            suffix:
+                !_isValidEmail
+                    ? Icon(Icons.check_circle_rounded)
+                    : Icon(Icons.check_circle_rounded, color: Colors.green),
             prefix: Icon(Icons.person),
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
           ),

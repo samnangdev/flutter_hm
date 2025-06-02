@@ -14,18 +14,17 @@ class _SearchScreenState extends State<SearchScreen> {
       appBar: AppBar(
         title: Padding(
           padding: const EdgeInsets.only(left: 90),
-          child: Row(
-            children: [
-              Text("Search", style: TextStyle(fontWeight: FontWeight.bold)),
-            ],
-          ),
+          child: Row(children: [Text("Search")]),
         ),
       ),
-      body: Column(
-        children: [
-          Text("Search")
-        ],
-      ),
+      body: Column(children: [SizedBox(height: 10), _searchBar]),
+    );
+  }
+
+  Widget get _searchBar {
+    return Padding(
+      padding: const EdgeInsets.only(left: 20, right: 20),
+      child: SearchBar(leading: const Icon(Icons.search)),
     );
   }
 }
