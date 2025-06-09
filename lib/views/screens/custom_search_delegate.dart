@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 class CustomSearchDelegate extends SearchDelegate {
   final List<String> searchTerms = [
-    "Redmi note 14",
-    "Iphone 16",
-    "S25 Ultra",
-    "Reno 13F",
-    "Honor x400",
+    "Louis Vuittion",
+    "Chanel",
+    "Dior",
+    "Gucci",
+    "Fandi",
+    "Prada",
+    "Pedro",
   ];
 
   @override
