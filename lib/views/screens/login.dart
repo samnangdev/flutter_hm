@@ -207,7 +207,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
         );
         return;
-      } else if (email == "Admin@admin.com" && password == "1234") {
+      } else if (email == "Manang@admin.com" && password == "1111") {
         UserSharePreference.saveUserData("email", email); // fixed typo
         UserSharePreference.saveUserData("password", password);
 

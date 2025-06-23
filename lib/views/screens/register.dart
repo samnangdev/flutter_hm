@@ -272,7 +272,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       }
 
       UserSharePreference.saveUserData("fullname", fullName);
-      UserSharePreference.saveUserData("email", email); // fixed typo
+      UserSharePreference.saveUserData("email", email);
       UserSharePreference.saveUserData("password", password);
 
       Navigator.pushReplacement(

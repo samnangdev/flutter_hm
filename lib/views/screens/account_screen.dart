@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:samnang_hm/data/user_shared_preference.dart';
-import 'package:samnang_hm/views/screens/getstart_screen.dart';
 import 'package:samnang_hm/views/screens/login.dart';
 
 class AccountScreen extends StatefulWidget {
@@ -12,7 +11,7 @@ class AccountScreen extends StatefulWidget {
 
 class _AccountScreenState extends State<AccountScreen> {
   String fullName = "Guest";
-  String Email = "Example@gmail.com";
+  String Email = "Guest@gmail.com";
 
   @override
   void initState() {
@@ -51,7 +50,7 @@ class _AccountScreenState extends State<AccountScreen> {
             _profile,
             SizedBox(height: 40),
             _userData,
-            SizedBox(height: 350),
+            SizedBox(height: 330),
             _logoutButton,
           ],
         ),
@@ -62,7 +61,7 @@ class _AccountScreenState extends State<AccountScreen> {
   Widget get _profile {
     return CircleAvatar(
       radius: 60,
-      backgroundImage: AssetImage('assets/images/profile.jpg'),
+      backgroundImage: AssetImage('assets/images/logo.png'),
     );
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:samnang_hm/views/screens/home_screen.dart';
 import 'package:samnang_hm/views/screens/login.dart';
 import 'package:samnang_hm/views/screens/register.dart';
 
@@ -33,7 +34,37 @@ class _GetstartScreenState extends State<GetstartScreen> {
             _getStartButton,
             SizedBox(height: 15),
             _textLogin,
+            SizedBox(height: 30),
+            _guestButton,
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget get _guestButton {
+    return Padding(
+      padding: const EdgeInsets.only(left: 30, right: 30),
+      child: Container(
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.purple[400],
+            minimumSize: Size(double.infinity, 50),
+          ),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return HomeScreen();
+                },
+              ),
+            );
+          },
+          child: Text(
+            "Login as a Guest",
+            style: TextStyle(fontSize: 15, color: Colors.white),
+          ),
         ),
       ),
     );
